@@ -1,25 +1,25 @@
-def calculator(num1, num2, operator):
-    out = None
+from operator import add, sub, mul, truediv
 
-    if operator == "+":
-        out = num1 + num2
-    elif operator == "-":
-        out = num1 - num2
-    elif operator == "*":
-        out = num1 * num2
-    elif operator == "/":
-        out = num1 / num2
-    return out
+operators = {"+": add, "-": sub, "*": mul, "/": truediv}
+
+
+def calculator(string):
+    """
+    Recursive function that allows operations with more than two numbers
+    in string formant.
+    """
+    try:
+        # Parse negative numbers and clean spaces
+        return float(string)
+    except ValueError:
+        pass
+
+    for c in operators.keys():
+        left, operator, right = string.partition(c)
+        if operator in operators:
+            return operators[operator](calculator(left), calculator(right))
 
 
 if __name__ == "__main__":
-    num1 = input("First Number:\n")
-    operator = input("Operator (+, -, *, /):\n")
-    num2 = input("Second Number:\n")
-
-    num1 = float(num1)
-    num2 = float(num2)
-
-    answer = calculator(num1, num2, operator)
-
-    print("Answer: " + str(answer))
+    calc = input("Expression:\n")
+    print("Answer: " + str(calculator(calc)))
