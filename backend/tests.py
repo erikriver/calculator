@@ -23,3 +23,6 @@ def test_divide():
 def test_multilple_operations():
     assert calculator("-.2+0.2") == 0
     assert calculator("12-2+4/3*6") == 18.0
+
+def test_zero_division():
+    assert calculator("2/0") == "E: Zero Division"
