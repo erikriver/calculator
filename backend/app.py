@@ -1,7 +1,26 @@
 import click
+from flask import Flask, request, jsonify
 from operator import add, sub, mul, truediv
 
+app = Flask(__name__)
 operators = {"+": add, "-": sub, "*": mul, "/": truediv}
+
+
+@app.route("/api", methods=["POST"])
+def api():
+    if not request.is_json:
+        return jsonify({"msg": "Missing JSON in request"}), 400
+
+    number1 = request.json.get("number1")
+    number2 = request.json.get("number2")
+    operator = request.json.get("operator")
+
+    if not number1 or not number2 or not operator:
+        return jsonify({"msg": "Missing values"}), 400
+
+    expression = str(number1) + operator + str(number2)
+    answer = calculator(expression)
+    return jsonify({"msg": str(answer)}), 200
 
 
 def calculator(string):
