@@ -1,0 +1,14 @@
+.keypad {
+  background-color: #000000;
+  flex: 1 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+}
+  
+.keypad > div {
+  width: 100%;
+  margin-bottom: 1px;
+  flex: 1 0 auto;
+  display: flex;
+}

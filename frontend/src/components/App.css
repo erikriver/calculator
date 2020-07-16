@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: auto;
+  height: 650px;
+  width: 395px;
+  padding: 10px;
+}
