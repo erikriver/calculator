@@ -24,11 +24,11 @@
   color: white;
 }
 
-.button.gray button{
+.button.gray button {
   background-color: #a5a5a5;
   color: black;
 }
-.button.large button{
+.button.large button {
   border-radius: 100px;
   width: 100%;
 }
