@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from operator import add, sub, mul, truediv
 
 app = Flask(__name__, static_folder="./client", static_url_path="/")
-operators = {"+": add, "-": sub, "*": mul, "/": truediv}
+operators = {"+": add, "-": sub, "x": mul, "/": truediv}
 
 
 @app.route("/")
@@ -56,8 +56,8 @@ def calculator(string):
 @click.option(
     "--expr",
     prompt="Arithmetic expression",
-    help="The expression that you want to evaluate with operatos such as +, -, *, / \n"  # noqa: E501
-    "and expressions are like 2*3+2,  3.5-1.5, -20/5",
+    help="The expression that you want to evaluate with operatos such as +, -, x, / \n"  # noqa: E501
+    "and expressions are like 2x3+2,  3.5-1.5, -20/5",
 )
 def cli(expr):
     answer = calculator(expr)
