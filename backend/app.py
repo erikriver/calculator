@@ -2,8 +2,13 @@ import click
 from flask import Flask, request, jsonify
 from operator import add, sub, mul, truediv
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="./client", static_url_path="/")
 operators = {"+": add, "-": sub, "*": mul, "/": truediv}
+
+
+@app.route("/")
+def index():
+    return app.send_static_file("index.html")
 
 
 @app.route("/api", methods=["POST"])
