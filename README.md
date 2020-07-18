@@ -2,14 +2,17 @@
 
 Full-stack project that tries to show different concepts of backend in Python/Flask and frontend with JavaScript/React to build a simple calculator.
 
-Features:
+<img src="calculator.png" />
+
+## Features:
+
  * CLI interface
  * Basic API
  * React Fronted
  * Unittests
  * Dockerfile
 
- <img src="calculator.png" />
+
 
  ## Requirements
 
