@@ -16,6 +16,7 @@ export default class Button extends React.Component {
   };
 
   render() {
+    // build the class name from the attributes in the component
     const className = [
       "button",
       this.props.orange ? "orange" : "",

@@ -1,5 +1,6 @@
 import api from "./api";
 
+// A block of code designed to interact with the API and view
 export default function calculator(obj, buttonName) {
   // To avoid frameworks and unnecessary libraries I am using Promises
   // to handle asynchronous API calls.

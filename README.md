@@ -46,7 +46,7 @@ $ make run           # run the project
 
 ## Plus
 
-There is an CLI calculator to evaluate expressions as an argumen, you follow this steps in the root of the repository to try it:
+There is an CLI calculator to evaluate expressions as an argument, you follow this steps in the root of the repository to try it:
 
 ```
 $ make backend
@@ -66,5 +66,5 @@ Arithmetic expression:
 * The expresions have four operators `+`, `-`, `/`, `x`
 * You can run multiple operations in the same expresion: `42/34x5-12`
 * it doesn't matter if it contains spaces between operations `2.5 + 2.7`, `4x .3 -5.0`
-* Catch exceptions if the expression is malformed `3/2x+3`, `45.3-7.1+``
+* Catch exceptions if the expression is malformed `3/2x+3`, `45.3-7.1+`
 * You can use float numbers like `.12` or `0.12`, i. e. `.56 - 0.23`

@@ -1,3 +1,4 @@
+//  Send a requests to the server and get the result as a promise
 export default function api(number1, number2, operator) {
   var data = {
     number1: number1,
