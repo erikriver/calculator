@@ -29,12 +29,12 @@ body {
 
 @media (min-width: 600px) and (min-height: 600px) {
   html {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
 @media (min-width: 800px) and (min-height: 800px) {
   html {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
