@@ -8,11 +8,19 @@ operators = {"+": add, "-": sub, "x": mul, "/": truediv}
 
 @app.route("/")
 def index():
+    """
+    With this route, when the client requests the https://example.com/ 
+    the server will send the contents of the index.html static file.
+    """
     return app.send_static_file("index.html")
 
 
 @app.route("/api", methods=["POST"])
 def api():
+    """
+    A little API with a single endpoint /api that returned the evaluation 
+    when posted two numbers and one operator in the request
+    """
     if not request.is_json:
         return jsonify({"msg": "Missing JSON in request"}), 400
 
@@ -34,7 +42,7 @@ def calculator(string):
     and different operators in string formant.
     """
     try:
-        # Parse negative numbers and clean spaces
+        # Parse negative numbers and clean spaces if is a single value
         return float(string)
     except ValueError:
         pass
@@ -42,6 +50,8 @@ def calculator(string):
     for c in operators.keys():
         left, op, right = string.partition(c)
         if op in operators:
+            # Is not a best practice use variable `answer` with diferentes types
+            # but is to maintain simple for the CLI and API
             try:
                 answer = operators[op](calculator(left), calculator(right))
             except ZeroDivisionError:
